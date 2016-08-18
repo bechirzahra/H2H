@@ -1,0 +1,61 @@
+﻿@model IEnumerable<H2H_WebAdmin.Models.User>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>getAllPatient</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.adresse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.passeword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+                <img src="@ViewBag.img" alt="">
+                @ViewBag.test
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.adresse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.passeword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

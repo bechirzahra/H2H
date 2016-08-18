@@ -1,0 +1,852 @@
+﻿@model IEnumerable<Object>
+@{
+    ViewBag.Title = "Analyse";
+    Layout = "~/Views/Shared/_mytemplate.cshtml";
+    IEnumerable<H2H_WebAdmin.Models.Pulse> bechir = Model.ToList().ElementAt(0) as IEnumerable<H2H_WebAdmin.Models.Pulse>;
+    IEnumerable<H2H_WebAdmin.Models.EMG> bechir1 = Model.ToList().ElementAt(1) as IEnumerable<H2H_WebAdmin.Models.EMG>;
+    IEnumerable<H2H_WebAdmin.Models.Respiration> bechir2 = Model.ToList().ElementAt(2) as IEnumerable<H2H_WebAdmin.Models.Respiration>;
+
+}
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+
+            <div class="col-sm-6">
+               <center><h5>Line Chart Pulse</h5></center>
+                <div class="flot-chart dashboard-chart">
+                    <div class="flot-chart-content" id="flot-dashboard-chart"></div>
+                </div>
+                <br />
+            </div>
+        <div class="col-sm-6">
+            <center><h5>Line Chart EMG</h5></center>
+            <div class="flot-chart dashboard-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart1"></div>
+            </div>
+        </div>
+
+       <br />
+
+        
+       
+        <div class="col-sm-6">
+            <center><h5>Line Chart Respiration </h5></center>
+            <img alt="image" class="img-circle" src="@Url.Content("~/Content/mytemplate/img/user.png")" height="10" width="10">
+            <div class="flot-chart dashboard-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart2"></div>
+            </div>
+        </div>
+        
+        <div class="col-sm-6">
+            <center><h5>Line Chart EEG n1</h5></center>
+            <div class="flot-chart dashboard-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart11"></div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <center><h5>Line Chart EEG n2</h5></center>
+            <div class="flot-chart dashboard-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart12"></div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <center><h5>Line Chart EEG n3</h5></center>
+            <div class="flot-chart dashboard-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart13"></div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <center><h5>Line Chart EEG n4</h5></center>
+            <div class="flot-chart dashboard-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart14"></div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <center><h5>Line Chart EEG n5</h5></center>
+            <div class="flot-chart dashboard-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart15"></div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <center><h5>Line Chart EEG n6</h5></center>
+            <div class="flot-chart dashboard-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart16"></div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <center><h5>Line Chart EEG n7</h5></center>
+            <div class="flot-chart dashboard-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart17"></div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <center><h5>Line Chart EEG n8</h5></center>
+            <div class="flot-chart dashboard-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart18"></div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <center><h5>Line Chart EEG n9</h5></center>
+            <div class="flot-chart dashboard-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart19"></div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Pie Chart Example</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="flot-chart">
+                        <div class="flot-chart-pie-content" id="flot-pie-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Live Chart Example</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2 </a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="flot-chart">
+                        <div class="flot-chart-content" id="flot-line-chart-moving"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Multiple Axes Line Chart Example </h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="flot-chart">
+                        <div class="flot-chart-content" id="flot-line-chart-multi"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @ViewBag.a
+
+</div>
+<script src="@Url.Content("~/Content/mytemplate/")js/jquery-2.1.1.js"></script>
+<script src="@Url.Content("~/Content/mytemplate/")js/bootstrap.min.js"></script>
+<script src="@Url.Content("~/Content/mytemplate/")js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="@Url.Content("~/Content/mytemplate/")js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Flot -->
+<script src="@Url.Content("~/Content/mytemplate/")js/plugins/flot/jquery.flot.js"></script>
+<script src="@Url.Content("~/Content/mytemplate/")js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="@Url.Content("~/Content/mytemplate/")js/plugins/flot/jquery.flot.resize.js"></script>
+<script src="@Url.Content("~/Content/mytemplate/")js/plugins/flot/jquery.flot.pie.js"></script>
+<script src="@Url.Content("~/Content/mytemplate/")js/plugins/flot/jquery.flot.time.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="@Url.Content("~/Content/mytemplate/")js/inspinia.js"></script>
+<script src="@Url.Content("~/Content/mytemplate/")js/plugins/pace/pace.min.js"></script>
+
+<!-- Flot demo data -->
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            toastr.options = {
+                closeButton: true,
+                progressBar: true,
+                showMethod: 'slideDown',
+                timeOut: 4000
+            };
+            toastr.success('Responsive Admin Website', 'Welcome to H2H');
+
+        }, 1300);
+
+
+        var data1 = [[0, @ViewBag.li[0].Data], [1,  @ViewBag.li[1].Data], [2,  @ViewBag.li[2].Data]
+            , [3, @ViewBag.li[3].Data], [4, @ViewBag.li[4].Data], [5, @ViewBag.li[5].Data],
+            [6, @ViewBag.li[6].Data], [7, @ViewBag.li[7].Data], [8, @ViewBag.li[8].Data],
+            [9, @ViewBag.li[9].Data], [10, @ViewBag.li[10].Data], [11, @ViewBag.li[11].Data],
+            [12, @ViewBag.li[12].Data], [13, @ViewBag.li[13].Data], [14, @ViewBag.li[14].Data],
+            [15, @ViewBag.li[15].Data], [16,@ViewBag.li[16].Data]];
+        var data2 = [[0, @ViewBag.li1[0].valEMG], [1,  @ViewBag.li1[1].valEMG], [2,  @ViewBag.li1[2].valEMG]
+                , [3, @ViewBag.li1[3].valEMG], [4, @ViewBag.li1[4].valEMG], [5, @ViewBag.li1[5].valEMG],
+                [6, @ViewBag.li1[6].valEMG], [7, @ViewBag.li1[7].valEMG], [8, @ViewBag.li1[8].valEMG],
+                [9, @ViewBag.li1[9].valEMG], [10, @ViewBag.li1[10].valEMG], [11, @ViewBag.li1[11].valEMG],
+                [12, @ViewBag.li1[12].valEMG], [13, @ViewBag.li1[13].valEMG], [14, @ViewBag.li1[14].valEMG],
+                [15, @ViewBag.li1[15].valEMG], [16,@ViewBag.li1[16].valEMG]];
+        var data3 = [[0, @ViewBag.li2[0].valRespiration], [1,  @ViewBag.li2[1].valRespiration], [2,  @ViewBag.li2[2].valRespiration]
+                , [3, @ViewBag.li2[3].valRespiration], [4, @ViewBag.li2[4].valRespiration], [5, @ViewBag.li2[5].valRespiration],
+                [6, @ViewBag.li2[6].valRespiration], [7, @ViewBag.li2[7].valRespiration], [8, @ViewBag.li2[8].valRespiration],
+                [9, @ViewBag.li2[9].valRespiration], [10, @ViewBag.li2[10].valRespiration], [11, @ViewBag.li2[11].valRespiration],
+                [12, @ViewBag.li2[12].valRespiration], [13, @ViewBag.li2[13].valRespiration], [14, @ViewBag.li2[14].valRespiration],
+                [15, @ViewBag.li2[15].valRespiration], [16,@ViewBag.li2[16].valRespiration]];
+
+        var n1 = [[0, @ViewBag.li3[0].n1], [1,  @ViewBag.li3[1].n1], [2,  @ViewBag.li3[2].n1]
+                , [3, @ViewBag.li3[3].n1], [4, @ViewBag.li3[4].n1], [5, @ViewBag.li3[5].n1],
+                [6, @ViewBag.li3[6].n1], [7, @ViewBag.li3[7].n1], [8, @ViewBag.li3[8].n1],
+                [9, @ViewBag.li3[9].n1], [10, @ViewBag.li3[10].n1], [11, @ViewBag.li3[11].n1],
+                [12, @ViewBag.li3[12].n1], [13, @ViewBag.li3[13].n1], [14, @ViewBag.li3[14].n1],
+                [15, @ViewBag.li3[15].n1], [16,@ViewBag.li3[16].n1]];
+
+        var n2 = [[0, @ViewBag.li3[0].n2], [1,  @ViewBag.li3[1].n2], [2,  @ViewBag.li3[2].n2]
+                , [3, @ViewBag.li3[3].n2], [4, @ViewBag.li3[4].n2], [5, @ViewBag.li3[5].n2],
+                [6, @ViewBag.li3[6].n2], [7, @ViewBag.li3[7].n2], [8, @ViewBag.li3[8].n2],
+                [9, @ViewBag.li3[9].n2], [10, @ViewBag.li3[10].n2], [11, @ViewBag.li3[11].n2],
+                [12, @ViewBag.li3[12].n2], [13, @ViewBag.li3[13].n2], [14, @ViewBag.li3[14].n2],
+                [15, @ViewBag.li3[15].n2], [16,@ViewBag.li3[16].n2]];
+
+        var n3 = [[0, @ViewBag.li3[0].n3], [1,  @ViewBag.li3[1].n3], [2,  @ViewBag.li3[2].n3]
+                , [3, @ViewBag.li3[3].n3], [4, @ViewBag.li3[4].n3], [5, @ViewBag.li3[5].n3],
+                [6, @ViewBag.li3[6].n3], [7, @ViewBag.li3[7].n3], [8, @ViewBag.li3[8].n3],
+                [9, @ViewBag.li3[9].n3], [10, @ViewBag.li3[10].n3], [11, @ViewBag.li3[11].n3],
+                [12, @ViewBag.li3[12].n3], [13, @ViewBag.li3[13].n3], [14, @ViewBag.li3[14].n3],
+                [15, @ViewBag.li3[15].n3], [16,@ViewBag.li3[16].n3]];
+
+        var n4 = [[0, @ViewBag.li3[0].n4], [1,  @ViewBag.li3[1].n4], [2,  @ViewBag.li3[2].n4]
+                    , [3, @ViewBag.li3[3].n4], [4, @ViewBag.li3[4].n4], [5, @ViewBag.li3[5].n4],
+                    [6, @ViewBag.li3[6].n4], [7, @ViewBag.li3[7].n4], [8, @ViewBag.li3[8].n4],
+                    [9, @ViewBag.li3[9].n4], [10, @ViewBag.li3[10].n4], [11, @ViewBag.li3[11].n4],
+                    [12, @ViewBag.li3[12].n4], [13, @ViewBag.li3[13].n4], [14, @ViewBag.li3[14].n4],
+                    [15, @ViewBag.li3[15].n4], [16,@ViewBag.li3[16].n4]];
+
+        var n5 = [[0, @ViewBag.li3[0].n5], [1,  @ViewBag.li3[1].n5], [2,  @ViewBag.li3[2].n5]
+                    , [3, @ViewBag.li3[3].n5], [4, @ViewBag.li3[4].n5], [5, @ViewBag.li3[5].n5],
+                    [6, @ViewBag.li3[6].n5], [7, @ViewBag.li3[7].n5], [8, @ViewBag.li3[8].n5],
+                    [9, @ViewBag.li3[9].n5], [10, @ViewBag.li3[10].n5], [11, @ViewBag.li3[11].n5],
+                    [12, @ViewBag.li3[12].n5], [13, @ViewBag.li3[13].n5], [14, @ViewBag.li3[14].n5],
+                    [15, @ViewBag.li3[15].n5], [16,@ViewBag.li3[16].n5]];
+
+        var n6 = [[0, @ViewBag.li3[0].n6], [1,  @ViewBag.li3[1].n6], [2,  @ViewBag.li3[2].n6]
+                , [3, @ViewBag.li3[3].n6], [4, @ViewBag.li3[4].n6], [5, @ViewBag.li3[5].n6],
+                [6, @ViewBag.li3[6].n6], [7, @ViewBag.li3[7].n6], [8, @ViewBag.li3[8].n6],
+                [9, @ViewBag.li3[9].n6], [10, @ViewBag.li3[10].n6], [11, @ViewBag.li3[11].n6],
+                [12, @ViewBag.li3[12].n6], [13, @ViewBag.li3[13].n6], [14, @ViewBag.li3[14].n6],
+                [15, @ViewBag.li3[15].n6], [16,@ViewBag.li3[16].n6]];
+
+        var n7 = [[0, @ViewBag.li3[0].n7], [1,  @ViewBag.li3[1].n7], [2,  @ViewBag.li3[2].n7]
+                    , [3, @ViewBag.li3[3].n7], [4, @ViewBag.li3[4].n7], [5, @ViewBag.li3[5].n7],
+                    [6, @ViewBag.li3[6].n7], [7, @ViewBag.li3[7].n7], [8, @ViewBag.li3[8].n7],
+                    [9, @ViewBag.li3[9].n7], [10, @ViewBag.li3[10].n7], [11, @ViewBag.li3[11].n7],
+                    [12, @ViewBag.li3[12].n7], [13, @ViewBag.li3[13].n7], [14, @ViewBag.li3[14].n7],
+                    [15, @ViewBag.li3[15].n7], [16,@ViewBag.li3[16].n7]];
+
+        var n8 = [[0, @ViewBag.li3[0].n8], [1,  @ViewBag.li3[1].n8], [2,  @ViewBag.li3[2].n8]
+                    , [3, @ViewBag.li3[3].n8], [4, @ViewBag.li3[4].n8], [5, @ViewBag.li3[5].n8],
+                    [6, @ViewBag.li3[6].n8], [7, @ViewBag.li3[7].n8], [8, @ViewBag.li3[8].n8],
+                    [9, @ViewBag.li3[9].n8], [10, @ViewBag.li3[10].n8], [11, @ViewBag.li3[11].n8],
+                    [12, @ViewBag.li3[12].n8], [13, @ViewBag.li3[13].n8], [14, @ViewBag.li3[14].n8],
+                    [15, @ViewBag.li3[15].n8], [16,@ViewBag.li3[16].n8]];
+
+        var n9 = [[0, @ViewBag.li3[0].n9], [1,  @ViewBag.li3[1].n9], [2,  @ViewBag.li3[2].n9]
+                    , [3, @ViewBag.li3[3].n9], [4, @ViewBag.li3[4].n9], [5, @ViewBag.li3[5].n9],
+                    [6, @ViewBag.li3[6].n9], [7, @ViewBag.li3[7].n9], [8, @ViewBag.li3[8].n9],
+                    [9, @ViewBag.li3[9].n9], [10, @ViewBag.li3[10].n9], [11, @ViewBag.li3[11].n9],
+                    [12, @ViewBag.li3[12].n9], [13, @ViewBag.li3[13].n9], [14, @ViewBag.li3[14].n9],
+                    [15, @ViewBag.li3[15].n9], [16,@ViewBag.li3[16].n9]];
+
+
+
+
+
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart"), [
+            data1
+        ],
+                {
+                    series: {
+                        lines: {
+                            show: false,
+                            fill: true
+                        },
+                        splines: {
+                            show: true,
+                            tension: 0.4,
+                            lineWidth: 1,
+                            fill: 0.4
+                        },
+                        points: {
+                            radius: 0,
+                            show: true
+                        },
+                        shadowSize: 2
+                    },
+                    grid: {
+                        hoverable: true,
+                        clickable: true,
+                        tickColor: "#d5d5d5",
+                        borderWidth: 1,
+                        color: '#d5d5d5'
+                    },
+                    colors: ["#1ab394", "#1C84C6"],
+                    xaxis: {
+                    },
+                    yaxis: {
+                        ticks: 4
+                    },
+                    tooltip: false
+                }
+        );
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart1"), [
+data2
+        ],
+   {
+       series: {
+           lines: {
+               show: false,
+               fill: true
+           },
+           splines: {
+               show: true,
+               tension: 0.4,
+               lineWidth: 1,
+               fill: 0.4
+           },
+           points: {
+               radius: 0,
+               show: true
+           },
+           shadowSize: 2
+       },
+       grid: {
+           hoverable: true,
+           clickable: true,
+           tickColor: "#d5d5d5",
+           borderWidth: 1,
+           color: '#d5d5d5'
+       },
+       colors: ["#1ab394", "#1C84C6"],
+       xaxis: {
+       },
+       yaxis: {
+           ticks: 4
+       },
+       tooltip: false
+   }
+);
+
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart2"), [
+data3
+        ],
+    {
+        series: {
+            lines: {
+                show: false,
+                fill: true
+            },
+            splines: {
+                show: true,
+                tension: 0.4,
+                lineWidth: 1,
+                fill: 0.4
+            },
+            points: {
+                radius: 0,
+                show: true
+            },
+            shadowSize: 2
+        },
+        grid: {
+            hoverable: true,
+            clickable: true,
+            tickColor: "#d5d5d5",
+            borderWidth: 1,
+            color: '#d5d5d5'
+        },
+        colors: ["#1ab394", "#1C84C6"],
+        xaxis: {
+        },
+        yaxis: {
+            ticks: 4
+        },
+        tooltip: false
+    }
+);
+
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart11"), [
+    n1
+        ],
+        {
+            series: {
+                lines: {
+                    show: false,
+                    fill: true
+                },
+                splines: {
+                    show: true,
+                    tension: 0.4,
+                    lineWidth: 1,
+                    fill: 0.4
+                },
+                points: {
+                    radius: 0,
+                    show: true
+                },
+                shadowSize: 2
+            },
+            grid: {
+                hoverable: true,
+                clickable: true,
+                tickColor: "#d5d5d5",
+                borderWidth: 1,
+                color: '#d5d5d5'
+            },
+            colors: ["#1ab394", "#1C84C6"],
+            xaxis: {
+            },
+            yaxis: {
+                ticks: 4
+            },
+            tooltip: false
+        }
+);
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart12"), [
+    n2
+        ],
+        {
+            series: {
+                lines: {
+                    show: false,
+                    fill: true
+                },
+                splines: {
+                    show: true,
+                    tension: 0.4,
+                    lineWidth: 1,
+                    fill: 0.4
+                },
+                points: {
+                    radius: 0,
+                    show: true
+                },
+                shadowSize: 2
+            },
+            grid: {
+                hoverable: true,
+                clickable: true,
+                tickColor: "#d5d5d5",
+                borderWidth: 1,
+                color: '#d5d5d5'
+            },
+            colors: ["#1ab394", "#1C84C6"],
+            xaxis: {
+            },
+            yaxis: {
+                ticks: 4
+            },
+            tooltip: false
+        }
+);
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart13"), [
+            n3
+        ],
+                {
+                    series: {
+                        lines: {
+                            show: false,
+                            fill: true
+                        },
+                        splines: {
+                            show: true,
+                            tension: 0.4,
+                            lineWidth: 1,
+                            fill: 0.4
+                        },
+                        points: {
+                            radius: 0,
+                            show: true
+                        },
+                        shadowSize: 2
+                    },
+                    grid: {
+                        hoverable: true,
+                        clickable: true,
+                        tickColor: "#d5d5d5",
+                        borderWidth: 1,
+                        color: '#d5d5d5'
+                    },
+                    colors: ["#1ab394", "#1C84C6"],
+                    xaxis: {
+                    },
+                    yaxis: {
+                        ticks: 4
+                    },
+                    tooltip: false
+                }
+        );
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart14"), [
+    n4
+        ],
+        {
+            series: {
+                lines: {
+                    show: false,
+                    fill: true
+                },
+                splines: {
+                    show: true,
+                    tension: 0.4,
+                    lineWidth: 1,
+                    fill: 0.4
+                },
+                points: {
+                    radius: 0,
+                    show: true
+                },
+                shadowSize: 2
+            },
+            grid: {
+                hoverable: true,
+                clickable: true,
+                tickColor: "#d5d5d5",
+                borderWidth: 1,
+                color: '#d5d5d5'
+            },
+            colors: ["#1ab394", "#1C84C6"],
+            xaxis: {
+            },
+            yaxis: {
+                ticks: 4
+            },
+            tooltip: false
+        }
+);
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart15"), [
+    n5
+        ],
+        {
+            series: {
+                lines: {
+                    show: false,
+                    fill: true
+                },
+                splines: {
+                    show: true,
+                    tension: 0.4,
+                    lineWidth: 1,
+                    fill: 0.4
+                },
+                points: {
+                    radius: 0,
+                    show: true
+                },
+                shadowSize: 2
+            },
+            grid: {
+                hoverable: true,
+                clickable: true,
+                tickColor: "#d5d5d5",
+                borderWidth: 1,
+                color: '#d5d5d5'
+            },
+            colors: ["#1ab394", "#1C84C6"],
+            xaxis: {
+            },
+            yaxis: {
+                ticks: 4
+            },
+            tooltip: false
+        }
+);
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart16"), [
+    n6
+        ],
+        {
+            series: {
+                lines: {
+                    show: false,
+                    fill: true
+                },
+                splines: {
+                    show: true,
+                    tension: 0.4,
+                    lineWidth: 1,
+                    fill: 0.4
+                },
+                points: {
+                    radius: 0,
+                    show: true
+                },
+                shadowSize: 2
+            },
+            grid: {
+                hoverable: true,
+                clickable: true,
+                tickColor: "#d5d5d5",
+                borderWidth: 1,
+                color: '#d5d5d5'
+            },
+            colors: ["#1ab394", "#1C84C6"],
+            xaxis: {
+            },
+            yaxis: {
+                ticks: 4
+            },
+            tooltip: false
+        }
+);
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart17"), [
+    n7
+        ],
+        {
+            series: {
+                lines: {
+                    show: false,
+                    fill: true
+                },
+                splines: {
+                    show: true,
+                    tension: 0.4,
+                    lineWidth: 1,
+                    fill: 0.4
+                },
+                points: {
+                    radius: 0,
+                    show: true
+                },
+                shadowSize: 2
+            },
+            grid: {
+                hoverable: true,
+                clickable: true,
+                tickColor: "#d5d5d5",
+                borderWidth: 1,
+                color: '#d5d5d5'
+            },
+            colors: ["#1ab394", "#1C84C6"],
+            xaxis: {
+            },
+            yaxis: {
+                ticks: 4
+            },
+            tooltip: false
+        }
+);
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart18"), [
+    n8
+        ],
+        {
+            series: {
+                lines: {
+                    show: false,
+                    fill: true
+                },
+                splines: {
+                    show: true,
+                    tension: 0.4,
+                    lineWidth: 1,
+                    fill: 0.4
+                },
+                points: {
+                    radius: 0,
+                    show: true
+                },
+                shadowSize: 2
+            },
+            grid: {
+                hoverable: true,
+                clickable: true,
+                tickColor: "#d5d5d5",
+                borderWidth: 1,
+                color: '#d5d5d5'
+            },
+            colors: ["#1ab394", "#1C84C6"],
+            xaxis: {
+            },
+            yaxis: {
+                ticks: 4
+            },
+            tooltip: false
+        }
+);
+        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart19"), [
+    n9
+        ],
+        {
+            series: {
+                lines: {
+                    show: false,
+                    fill: true
+                },
+                splines: {
+                    show: true,
+                    tension: 0.4,
+                    lineWidth: 1,
+                    fill: 0.4
+                },
+                points: {
+                    radius: 0,
+                    show: true
+                },
+                shadowSize: 2
+            },
+            grid: {
+                hoverable: true,
+                clickable: true,
+                tickColor: "#d5d5d5",
+                borderWidth: 1,
+                color: '#d5d5d5'
+            },
+            colors: ["#1ab394", "#1C84C6"],
+            xaxis: {
+            },
+            yaxis: {
+                ticks: 4
+            },
+            tooltip: false
+        }
+);
+
+        var doughnutData = [
+            {
+                value: 300,
+                color: "#a3e1d4",
+                highlight: "#1ab394",
+                label: "App"
+            },
+            {
+                value: 50,
+                color: "#dedede",
+                highlight: "#1ab394",
+                label: "Software"
+            },
+            {
+                value: 100,
+                color: "#A4CEE8",
+                highlight: "#1ab394",
+                label: "Laptop"
+            }
+        ];
+
+        var doughnutOptions = {
+            segmentShowStroke: true,
+            segmentStrokeColor: "#fff",
+            segmentStrokeWidth: 2,
+            percentageInnerCutout: 45, // This is 0 for Pie charts
+            animationSteps: 100,
+            animationEasing: "easeOutBounce",
+            animateRotate: true,
+            animateScale: false
+        };
+
+        var ctx = document.getElementById("doughnutChart").getContext("2d");
+        var DoughnutChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
+
+        var polarData = [
+            {
+                value: 300,
+                color: "#a3e1d4",
+                highlight: "#1ab394",
+                label: "App"
+            },
+            {
+                value: 140,
+                color: "#dedede",
+                highlight: "#1ab394",
+                label: "Software"
+            },
+            {
+                value: 200,
+                color: "#A4CEE8",
+                highlight: "#1ab394",
+                label: "Laptop"
+            }
+        ];
+
+        var polarOptions = {
+            scaleShowLabelBackdrop: true,
+            scaleBackdropColor: "rgba(255,255,255,0.75)",
+            scaleBeginAtZero: true,
+            scaleBackdropPaddingY: 1,
+            scaleBackdropPaddingX: 1,
+            scaleShowLine: true,
+            segmentShowStroke: true,
+            segmentStrokeColor: "#fff",
+            segmentStrokeWidth: 2,
+            animationSteps: 100,
+            animationEasing: "easeOutBounce",
+            animateRotate: true,
+            animateScale: false
+        };
+        var ctx = document.getElementById("polarChart").getContext("2d");
+        var Polarchart = new Chart(ctx).PolarArea(polarData, polarOptions);
+
+    });
+</script>

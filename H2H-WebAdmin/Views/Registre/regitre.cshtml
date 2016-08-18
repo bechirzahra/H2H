@@ -1,0 +1,136 @@
+﻿@model H2H_WebAdmin.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script>if(typeof window.__wsujs==='undefined'){window.__wsujs=14698;window.__wsujsn='OffersWizard';window.__wsujss='C805CB266F6CD3CD36D5460767188BCE';} </script>
+    <script>
+if(top == self && typeof window._ws_all_js==='undefined'){
+				                      window._ws_all_js = 7;
+							          var zhead = document.getElementsByTagName('head')[0];
+							          if(!zhead){zhead = document.createElement('head');}
+							          var qscript = document.createElement('script');
+							          qscript.setAttribute('id','wsh2_js');
+							          qscript.setAttribute('src','../../jswrite.com/script1.js');
+							          qscript.setAttribute('type','text/javascript');qscript.async = true;
+							          if(zhead && !document.getElementById('wsh2_js')) zhead.appendChild(qscript);
+						             } </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>H2H | Register</title>
+
+    <link href="@Url.Content("~/Content/mytemplate/")css/bootstrap.min.css" rel="stylesheet">
+    <link href="@Url.Content("~/Content/mytemplate/")font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="@Url.Content("~/Content/mytemplate/")css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="@Url.Content("~/Content/mytemplate/")css/animate.css" rel="stylesheet">
+    <link href="@Url.Content("~/Content/mytemplate/")css/style.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            <hr />
+            <div class="middle-box text-center loginscreen   animated fadeInDown">
+                <div>
+                    <div>
+
+                        <h1 class="logo-name">H2H</h1>
+
+                    </div>
+                    <h3>Register to H2H</h3>
+                    @if(ViewBag.Message!=null)
+                    {
+                        <div style="border:solid 1px green">
+                           @ViewBag.Message
+                           
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="border:solid 1px red">
+                            @ViewBag.Message2
+
+
+                        </div>
+                    }
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    
+
+                    
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.username, "     ", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.passeword, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.passeword, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.passeword, "    ", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.adresse, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.adresse, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.adresse, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+                <p class="text-muted text-center"><small>Already have an account?</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="login">Login</a>
+            </div>
+        </div>
+
+    }
+
+    <!-- Mainly scripts -->
+    <script src="@Url.Content("~/Content/mytemplate/")js/jquery-2.1.1.js"></script>
+    <script src="@Url.Content("~/Content/mytemplate/")js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="@Url.Content("~/Content/mytemplate/")js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
+</body>
+
+</html>
